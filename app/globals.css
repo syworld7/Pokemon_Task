@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* keep variables if you use them elsewhere */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* If you want to keep the dark-mode variables also white, do this */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+/* FORCE white background for the entire document */
+html, body, #__next {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(135deg, #f8fafc 0%, #ffffff 40%, #fff1f2 100%) !important;
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* remove existing gradient usage — if you used it elsewhere, replace with explicit usage there */
+body {
+  /* no gradient here */
+  background-image: none !important;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
